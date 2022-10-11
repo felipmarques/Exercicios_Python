@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class Honour:
 
@@ -14,8 +14,7 @@ entre dois horarios """
     def soma_segundo(self, segundos):
         time = f'{self._hours}:{self._minutes}:{self._seconds}'
         hora = datetime.strptime(time, "%H:%M:%S")
-        soma = datetime.strptime(segundos, "%H:%M:%S")
-        conta = hora + soma
+        conta = hora + timedelta(seconds=segundos)
         return conta
 
     @staticmethod
@@ -24,6 +23,3 @@ entre dois horarios """
         f2 = datetime.strptime(h2, "%H:%M:%S")
         dif = f2 - f1
         return dif
-
-
-
