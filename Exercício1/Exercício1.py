@@ -1,25 +1,11 @@
-from datetime import datetime, timedelta
+from classes import Honour
 
-class Honour:
-
-    """ Crie uma classe para representar um horario (hora, minuto e segundo). Implemente os
+""" Crie uma classe para representar um horario (hora, minuto e segundo). Implemente os
     métodos para fazer as operações de incremento (de segundos) no horário e diferença
 entre dois horarios """
 
-    def __init__(self, hours, minutes, seconds):
-        self._hours = hours
-        self._minutes = minutes
-        self._seconds = seconds
+hora1 = Honour(5,30,57)
 
-    def soma_segundo(self, segundos):
-        time = f'{self._hours}:{self._minutes}:{self._seconds}'
-        hora = datetime.strptime(time, "%H:%M:%S")
-        conta = hora + timedelta(seconds=segundos)
-        return conta
+print(Honour.dif_honour('4:20:14' ,'5:30:45'))
 
-    @staticmethod
-    def dif_honour(h1, h2):
-        f1 = datetime.strptime(h1, "%H:%M:%S")
-        f2 = datetime.strptime(h2, "%H:%M:%S")
-        dif = f2 - f1
-        return dif
+print(hora1.soma_segundo(37))
